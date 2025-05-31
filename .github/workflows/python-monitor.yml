@@ -25,3 +25,9 @@ jobs:
       - name: Executar script
         run: |
           python monitor_logs.py
+
+      - name: Fazer upload do logs.csv
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs-csv
+          path: logs.csv
