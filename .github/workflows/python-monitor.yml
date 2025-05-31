@@ -1,0 +1,27 @@
+name: Rodar monitor_logs.py
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 * * * *'  # roda a cada hora
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Executar script
+        run: |
+          python monitor_logs.py
