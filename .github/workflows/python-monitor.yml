@@ -27,7 +27,7 @@ jobs:
           python monitor_logs.py
 
       - name: Fazer upload do logs.csv
-        uses: actions/upload-artifact@d4051db76e20f812e0ee6c7a473c5e2c7026ca3f
+        uses: actions/upload-artifact@v2
         with:
           name: logs-csv
           path: logs.csv
