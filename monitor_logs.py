@@ -18,10 +18,10 @@ def gerar_evento_login_invalido():
 def gravar_evento_csv(evento, nome_arquivo='logs.csv'):
     # Verifica se o arquivo existe para saber se deve colocar o cabeçalho
     try:
-        with open(nome_arquivo, 'r'):
-            existe = True
-    except FileNotFoundError:
-        existe = False
+    # código atual do seu script aqui
+except Exception as e:
+    print(f"Erro: {e}")
+    exit(2)
 
     with open(nome_arquivo, mode='a', newline='') as file:
         writer = csv.writer(file)
